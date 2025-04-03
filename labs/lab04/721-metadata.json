@@ -1,0 +1,24 @@
+{
+  "721": {
+    "f627b76ea7da6603681213a77c7274d312f20d394c14c866c0a85e9f": {
+      "NFT_01": {
+        "class": "C2VN_BK02",
+        "name": "NFT_01",
+        "student_no": "005",
+        "meta_version": "1",
+        "image": "ipfs://QmTPoBBis8n6EmkQv554DHZMjgECycb6mrTsAMBbFrnSNX",
+        "mediaType": "image/jpg",
+        "module": "module 1- CLI"
+      },
+      "NFT_02": {
+        "class": "C2VN_BK02",
+        "name": "NFT_02",
+        "student_no": "005",
+        "meta_version": "2",
+        "image": "ipfs://QmS8dzMBYznWZmgbY5rtWtmpzYxYpT76KAZzE2Y8vsQSYf",
+        "mediaType": "image/png",
+        "module": "module 1- CLI"
+      }
+    }
+  }
+}

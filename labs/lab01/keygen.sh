@@ -1,16 +1,20 @@
 #!/bin/bash
 
+## Tạo Master key từ seed phrase
 cat .phrase.prv | cardano-address key from-recovery-phrase Shelley > root.xsk
 
+## Tạo Payment key từ Master key
 cardano-address key child 1852H/1815H/0H/0/0 < root.xsk > payment.xsk
 cardano-address key public --without-chain-code < payment.xsk > payment.xvk
 
+### Chuyển đổi sang .skey để dùng bằng cli
 cardano-cli key convert-cardano-address-key --shelley-payment-key \
                                             --signing-key-file payment.xsk \
                                             --out-file payment.skey
 cardano-cli key verification-key --signing-key-file payment.skey \
                                  --verification-key-file payment.vkey                                           
 
+## Tạo Stake key từ Master key
 cardano-address key child 1852H/1815H/0H/2/0    < root.xsk > stake.xsk
 cardano-address key public --without-chain-code < stake.xsk > stake.xvk
 cardano-cli key convert-cardano-address-key --shelley-payment-key \

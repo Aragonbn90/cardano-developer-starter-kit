@@ -5,10 +5,11 @@ address_skey="payment.skey"
 cardano-cli query utxo $testnet --address $address
 
 #chỉnh sửa lại giá trị các biến
-BOB_ADDR="addr_test1qz8shh6wqssr83hurdmqx44js8v7tglg9lm3xh89auw007dd38kf3ymx9c2w225uc7yjmplr794wvc96n5lsy0wsm8fq9n5epq"
+##BOB_ADDR="addr_test1qz8shh6wqssr83hurdmqx44js8v7tglg9lm3xh89auw007dd38kf3ymx9c2w225uc7yjmplr794wvc96n5lsy0wsm8fq9n5epq"
+BOB_ADDR="addr_test1qz3vhmpcm2t25uyaz0g3tk7hjpswg9ud9am4555yghpm3r770t25gsqu47266lz7lsnl785kcnqqmjxyz96cddrtrhnsdzl228"
 VALUE=1000000
 
-UTXO_IN=cccfd8642e237ea1d7465a42d3851d1a7902ba9abb9fab46b1b12b69df02ef4b#2
+UTXO_IN=1f4b385cbb761f2bb73bc919d0d14f4f773f7000b98490c6dfa843904dd012e3#0
 
 # B1. Xây dựng giao dịch (Build Tx)
 

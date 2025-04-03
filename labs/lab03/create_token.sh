@@ -1,6 +1,7 @@
 #1- Thiết lập biến môi trường
 testnet="--testnet-magic 2"
-tokenname=$(echo -n "CBCA1" | xxd -ps | tr -d '\n')
+realtokenname="Pham Trong Nghia_005"
+tokenname=$(echo -n $realtokenname | xxd -ps | tr -d '\n')
 tokenamount="10000000"
 output="2000000"
 
