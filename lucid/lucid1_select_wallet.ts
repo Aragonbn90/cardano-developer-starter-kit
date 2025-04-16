@@ -1,20 +1,22 @@
-import { Blockfrost, Lucid, Crypto } from "https://deno.land/x/lucid/mod.ts";
-// import init, { Bip32PrivateKey } from "https://esm.sh/@emurgo/cardano-serialization-lib-browser@latest";
+import { Blockfrost, Lucid, fromText, Addresses, Data } from "https://deno.land/x/lucid@0.20.9/mod.ts";
+import "jsr:@std/dotenv/load";
 
-// Load thư viện WebAssembly
-// await init();
+// Lấy các biến từ env
+const Bob_mnonic = Deno.env.get("MNEMONIC");
+const BLOCKFROST_ID = Deno.env.get("BLOCKFROST_ID");
+const BLOCKFROST_NETWORK = Deno.env.get("BLOCKFROST_NETWORK");
 
-// Provider selection
-// There are multiple builtin providers you can choose from in Lucid.
-
-// Blockfrost
+// console.log("Bob_mnonic=" + Bob_mnonic)
+// console.log("BLOCKFROST_ID=" + BLOCKFROST_ID)
+// console.log("BLOCKFROST_NETWORK=" + BLOCKFROST_NETWORK)
 
 const lucid = new Lucid({
     provider: new Blockfrost(
-        "https://cardano-preview.blockfrost.io/api/v0",
-        "previewcvzl4VvZO1u4DvMQiCCZkpU2oWplOhlg",
+        BLOCKFROST_NETWORK,
+        BLOCKFROST_ID,
     ),
 });
+lucid.selectWalletFromSeed(Bob_mnonic);
 
 // // Đọc private key từ file
 // const privateKeyXsk = (await Deno.readTextFile("./payment.xsk")).trim();
@@ -34,9 +36,9 @@ const lucid = new Lucid({
 // const privateKey = Crypto.generatePrivateKey(); // Bech32 encoded private key
 // await Deno.writeTextFile('./payment.xsk', privateKey); //lưu lại file private key ở lần chạy đầu tiên
 
-const privateKey = await Deno.readTextFile("./payment.xsk");
-// console.log("Private Key:", privateKey);
-lucid.selectWalletFromPrivateKey(privateKey);
+// const privateKey = await Deno.readTextFile("./payment.xsk");
+// // console.log("Private Key:", privateKey);
+// lucid.selectWalletFromPrivateKey(privateKey);
 
 console.log(lucid);
 
