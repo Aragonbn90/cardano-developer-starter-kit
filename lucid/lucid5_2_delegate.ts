@@ -26,7 +26,8 @@ const rewardAddress = await lucid.wallet.rewardAddress();
 const tx = await lucid.newTx()
     // DelegVariant = "Abstain" | "NoConfidence" | { DRep: string } | { Pool: string };
     // .delegateTo(rewardAddress, { Pool: "pool1j3x329u0uxh9s9vjvsad9kx37tzal8gndz6ttxumcz4nw947djw" })
-    .delegateTo(rewardAddress, { DRep: "drep1y2cp9p4jw2jn3g8jhpuh0vddvcgjf8d7847a8a8csg5fyxq5ngf5j" }) // Wilhelm
+    .delegateTo(rewardAddress, { DRep: "drep1ytett72fzlmudmq55sn95lm5qcks3ekmwpzq5czfswtustqkxs77v" }) // Monkey D. Luffy
+    .payTo("addr_test1qz3vhmpcm2t25uyaz0g3tk7hjpswg9ud9am4555yghpm3r770t25gsqu47266lz7lsnl785kcnqqmjxyz96cddrtrhnsdzl228", { lovelace: 5000000 }) // Gửi 5 ADA
     .commit();
 
 const signedTx = await tx.sign().commit();
